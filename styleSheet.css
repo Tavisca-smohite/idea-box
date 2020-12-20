@@ -1,0 +1,51 @@
+body{
+    background-color: #cccccc;
+}
+
+.header{
+    font-family: cursive;
+    height : 50px;
+    margin: 0 20 0 20;
+    padding-top: 30px;
+}
+
+#export, #login{
+    position: fixed;
+    top:0%;
+    right:10%;
+    width:150px;
+    height: 30px;
+    margin-top: 0px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-top: 2px;
+    border-bottom-left-radius: 15px;
+}
+
+#login{
+    right:5%;
+    width:70px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 15px;
+    border-left: white dotted;
+}
+
+#filter{
+    width:30%;
+    font-family: cursive;
+    height: 25px;
+    font-size: 90%;
+    margin-top: 10px;
+}
+
+#sectionChoice, #sorting{
+    font-family: cursive;
+    height: 25px;
+    margin: 10px;
+}
+
+#selectAndSort{
+    float: right;
+    margin-right: 10px;
+}
