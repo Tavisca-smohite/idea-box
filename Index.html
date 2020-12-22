@@ -1,26 +1,68 @@
 <html>
     <head>
+        <title>idea box (html + js assignment )</title>
         <link rel="stylesheet" href="styleSheet.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>       
     </head>
     <body>
-        <div class = "header">
+        <div id = "header">
             <p id="export">Export</p>
-            <p id="login">Login</p>
+            <div id="exportOptions">
+                <p class="exportOption">PDF</p>
+                <p class="exportOption">Excel</p>
+            </div>
             <input type="text" id="filter" placeholder="🔍start typing to filter stickies">
-            <div id="selectAndSort">
-                <label>View Section</label>
-                <select id="sectionChoice" name="sectionChoice">
+            <div id="dropdowns">
+                <label for="sections">View Section</label>
+                <select id="sections" name="sections">
                     <option value="All">All Sections</option>
-                    <option value="section1">Section 1</option>
-                    <option value="section2">Section 2</option>
-                    <option value="section3">Section 3</option>
+                    <option value="1">Section 1</option>
+                    <option value="2">Section 2</option>
+                    <option value="3">Section 3</option>
                 </select>
-                <label>Sort by</label>
-                <select id="sorting" name="sorting">
-                    <option value="createdTime">Created Time</option>
-                    <option value="votes">Votes</option>
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                    <option value="1">Created Time</option>
+                    <option value="2">Votes</option>
                 </select>
             </div>
+        </div>
+        <div id = "body-content">
+            <p id = "creater">Sheetal Mohite</p>
+            <div id="dataHolder">
+                <div class="data-item">
+                    <p class = "dataTitle">Title 1 <button id="addLeft" class="plusIcon fas fa-plus-circle"></button></p>
+                    <div id="leftSection" class="noteHolder">
+
+                    </div>
+                </div>
+                <div class="data-item">
+                    <p class = "dataTitle">Title 2 <button class="plusIcon fas fa-plus-circle" id="addMid"></button></p>
+                    <div id="midSection" class="noteHolder">
+                        
+                    </div>
+                </div>
+                <div class="data-item">
+                    <p class = "dataTitle">Title 3 <button class="plusIcon fas fa-plus-circle" id="addRight"></button></p>
+                    <div id="rightSection" class="noteHolder">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="noteContainer">
+            <button id="close" class="fas fa-times"></button>
+            <br><br><br>
+            <button id="edit" class="fas fa-pencil-alt"></button>
+            <div id="noteContainerItem">
+                <textarea type="text" id="noteContainerContent" value="" class="note"></textarea>
+            </div>
+            <button id="like" class="fas fa-thumbs-up"></button>
+            <p id="noteContainerLike">+</p>
+            <button id="delete" class="fas fa-trash-alt"></button>
+        </div>
+        <div id="bottomL">
+
         </div>
     </body>
 </html>

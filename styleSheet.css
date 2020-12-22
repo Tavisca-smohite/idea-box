@@ -2,35 +2,6 @@ body{
     background-color: #cccccc;
 }
 
-.header{
-    font-family: cursive;
-    height : 50px;
-    margin: 0 20 0 20;
-    padding-top: 30px;
-}
-
-#export, #login{
-    position: fixed;
-    top:0%;
-    right:10%;
-    width:150px;
-    height: 30px;
-    margin-top: 0px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding-top: 2px;
-    border-bottom-left-radius: 15px;
-}
-
-#login{
-    right:5%;
-    width:70px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 15px;
-    border-left: white dotted;
-}
-
 #filter{
     width:30%;
     font-family: cursive;
@@ -39,13 +10,247 @@ body{
     margin-top: 10px;
 }
 
-#sectionChoice, #sorting{
+#header{
+    font-family: cursive;
+    height : 50px;
+    margin: 0 20 0 20;
+    padding-top: 30px;
+}
+
+#sections, #sort{
     font-family: cursive;
     height: 25px;
     margin: 10px;
 }
 
-#selectAndSort{
+#dropdowns{
     float: right;
     margin-right: 10px;
+}
+
+#export{
+    position: fixed;
+    top:0px;
+    right:150px;
+    margin-top: 0px;
+    background-color: black;
+    color: white;
+    width:150px;
+    height: 30px;
+    text-align: center;
+    padding: 3 2 1 2;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+}
+
+#exportOptions{
+    display:none;
+}
+
+#export:hover + #exportOptions{
+    position: fixed;
+    top:30px;
+    right:150px;
+    margin-top: 0px;
+    background-color: black;
+    color: blue;
+    width:150px;
+    height: 50px;
+    text-align: center;
+    display: block;
+}
+
+#exportOptions:hover{
+    position: fixed;
+    top:30px;
+    right:150px;
+    margin-top: 0px;
+    background-color: black;
+    color: blue;
+    width:150px;
+    height: 50px;
+    text-align: center;
+    display: block;
+}
+
+.exportOption{
+    background-color: black;
+    color:blue;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#body-content{
+    border:solid;
+    border-color: #696969;
+    border-width: 10px;
+    border-radius: 5px;
+    min-height: 300px;
+    width : 90%;
+    margin :20px;
+    background-color: white;
+}
+
+#creater, .dataTitle{
+    text-align: center;
+    font-family: cursive;
+    font-size: larger;
+}
+
+.dataTitle{
+    margin-top: 0px;
+}
+
+#dataHolder{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    padding: 10px;
+    grid-gap: 20px;
+    min-height: 500px;
+}
+.data-item{
+    position: relative;
+    min-height: 50px;
+}
+
+#plusIcon, .fas, .fa-plus-circle{
+    padding: 2px;
+    color: #83bc2d;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+}
+
+.noteHolder{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 5px;
+    grid-gap: 5px;
+}
+.note-item{
+    position: relative;
+    min-height: 110px;
+    max-height: 110px;
+    cursor: pointer;
+}
+
+.left,.leftnoteContainer{
+    background-color: #c3ee8f;
+}
+
+.mid,.midnoteContainer{
+    background-color: #feff88;
+}
+
+.right,.rightnoteContainer{
+    background-color: #eed3ff;
+}
+
+.note{
+    word-break: break-all;
+    font-family: cursive;
+    font-size: smaller;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    max-height: inherit;
+}
+
+.likesCounter{
+    margin: 2px 6px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: smaller;
+}
+
+#noteContainer{
+    height: 220px;
+    width:300px;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    margin: auto;
+    padding-right: 20px;
+    box-shadow: 0px 4px 20px 3px;
+    z-index: 3;
+    display:none;
+}
+
+#close{
+    color:black;
+    float:right;
+    background-color: inherit;
+    margin-top: 4px;
+}
+
+#noteContainerItem{
+    height:150px;
+    width:270px;
+    border: black solid 1px;
+    float: right;
+    margin-top: -20px;
+    background-color: inherit;
+}
+
+#edit{
+    color: black;
+    position: absolute;
+    top: 40px;
+    left:2px;
+    background-color: inherit;
+}
+
+#delete{
+    position: absolute;
+    bottom: 2px;
+    font-size: x-large;
+    right: 5px;
+    color: black;
+    background-color: inherit;
+}
+
+#like{
+    color: black;
+    position: absolute;
+    font-size: x-large;
+    left: 5px;
+    bottom: 4px;
+    background-color: inherit;
+}
+
+#noteContainerLike{
+    color: black;
+    position: absolute;
+    font-size: x-large;
+    left: 35px;
+    bottom: 0px;
+    margin: 4px;
+}
+
+#noteContainerContent{
+    height: 100%;
+    width: inherit;
+    word-break: break-all;
+    text-align: center;
+    overflow: hidden auto;
+    box-shadow: inset 0.3px 0.3px 8px #000;
+    background-color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+#bottomL{
+    width:100%;
+    height:100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    opacity: 0.8;
+    display: none;
 }
