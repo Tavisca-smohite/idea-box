@@ -1,41 +1,41 @@
-body{
-    background-color: #cccccc;
+body {
+    background-color: #FFFAFA;
 }
 
-#filter{
-    width:30%;
+#filter {
+    width: 30%;
     font-family: cursive;
     height: 25px;
     font-size: 90%;
     margin-top: 10px;
 }
 
-#header{
+#header {
     font-family: cursive;
-    height : 50px;
+    height: 50px;
     margin: 0 20 0 20;
     padding-top: 30px;
 }
 
-#sections, #sort{
+#sections, #sort {
     font-family: cursive;
     height: 25px;
     margin: 10px;
 }
 
-#dropdowns{
+#dropdowns {
     float: right;
     margin-right: 10px;
 }
 
-#export{
+#export {
     position: fixed;
-    top:0px;
-    right:150px;
+    top: 0px;
+    right: 150px;
     margin-top: 0px;
     background-color: black;
     color: white;
-    width:150px;
+    width: 150px;
     height: 30px;
     text-align: center;
     padding: 3 2 1 2;
@@ -43,77 +43,85 @@ body{
     cursor: pointer;
 }
 
-#exportOptions{
-    display:none;
+#exportOptions {
+    display: none;
 }
 
-#export:hover + #exportOptions{
+#export:hover + #exportOptions {
     position: fixed;
-    top:30px;
-    right:150px;
+    top: 30px;
+    right: 150px;
     margin-top: 0px;
     background-color: black;
     color: blue;
-    width:150px;
+    width: 150px;
     height: 50px;
     text-align: center;
     display: block;
 }
 
-#exportOptions:hover{
+#exportOptions:hover {
     position: fixed;
-    top:30px;
-    right:150px;
+    top: 30px;
+    right: 150px;
     margin-top: 0px;
     background-color: black;
     color: blue;
-    width:150px;
+    width: 150px;
     height: 50px;
     text-align: center;
     display: block;
 }
 
-.exportOption{
+.exportOption {
     background-color: black;
-    color:blue;
+    color: #37bbeb;
+    ;
     margin: 0px;
     cursor: pointer;
 }
 
-#body-content{
-    border:solid;
-    border-color: #696969;
+    .exportOption:hover {
+        color: blue;
+    }
+
+#main {
+    border: solid;
+    border-color: #002244;
     border-width: 10px;
     border-radius: 5px;
     min-height: 300px;
-    width : 90%;
-    margin :20px;
+    width: 96%;
+    margin: 20px;
     background-color: white;
+    box-shadow: 2px 2px 5px grey;
 }
 
-#creater, .dataTitle{
+#name, .sectionHeader {
     text-align: center;
     font-family: cursive;
     font-size: larger;
+    color: white;
 }
 
-.dataTitle{
+.sectionHeader {
     margin-top: 0px;
 }
 
-#dataHolder{
+#section-container {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     padding: 10px;
     grid-gap: 20px;
     min-height: 500px;
 }
-.data-item{
+
+.section-item {
     position: relative;
     min-height: 50px;
 }
 
-#plusIcon, .fas, .fa-plus-circle{
+#plusIcon, .fas, .fa-plus-circle {
     padding: 2px;
     color: #83bc2d;
     background-color: white;
@@ -122,32 +130,47 @@ body{
     font-size: large;
 }
 
-.noteHolder{
+.note-container {
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 5px;
     grid-gap: 5px;
 }
-.note-item{
+
+.note-item {
     position: relative;
     min-height: 110px;
     max-height: 110px;
     cursor: pointer;
+    box-shadow: 2px 2px 5px grey;
+    animation: mymove 0.6s;
 }
 
-.left,.leftnoteContainer{
-    background-color: #c3ee8f;
+@keyframes mymove {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.mid,.midnoteContainer{
-    background-color: #feff88;
+.left, .leftOpenNote {
+    background-color: #FFA07A;
 }
 
-.right,.rightnoteContainer{
-    background-color: #eed3ff;
+.mid, .midOpenNote {
+    background-color: #D8BFD8;
 }
 
-.note{
+.right, .rightOpenNote {
+    background-color: #D0F0C0;
+}
+
+.note {
     word-break: break-all;
     font-family: cursive;
     font-size: smaller;
@@ -157,7 +180,7 @@ body{
     max-height: inherit;
 }
 
-.likesCounter{
+.likesCounter {
     margin: 2px 6px;
     position: absolute;
     bottom: 0px;
@@ -165,46 +188,47 @@ body{
     font-size: smaller;
 }
 
-#noteContainer{
+#openNote {
     height: 220px;
-    width:300px;
+    width: 300px;
     position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
     padding-right: 20px;
     box-shadow: 0px 4px 20px 3px;
+    border-radius: 15px;
     z-index: 3;
-    display:none;
+    display: none;
 }
 
-#close{
-    color:black;
-    float:right;
+#close {
+    color: black;
+    float: right;
     background-color: inherit;
     margin-top: 4px;
 }
 
-#noteContainerItem{
-    height:150px;
-    width:270px;
+#openNoteItem {
+    height: 150px;
+    width: 270px;
     border: black solid 1px;
     float: right;
     margin-top: -20px;
     background-color: inherit;
 }
 
-#edit{
+#edit {
     color: black;
     position: absolute;
     top: 40px;
-    left:2px;
+    left: 2px;
     background-color: inherit;
 }
 
-#delete{
+#delete {
     position: absolute;
     bottom: 2px;
     font-size: x-large;
@@ -213,7 +237,7 @@ body{
     background-color: inherit;
 }
 
-#like{
+#like {
     color: black;
     position: absolute;
     font-size: x-large;
@@ -222,7 +246,7 @@ body{
     background-color: inherit;
 }
 
-#noteContainerLike{
+#openNoteLike {
     color: black;
     position: absolute;
     font-size: x-large;
@@ -231,7 +255,7 @@ body{
     margin: 4px;
 }
 
-#noteContainerContent{
+#openNoteContent {
     height: 100%;
     width: inherit;
     word-break: break-all;
@@ -245,9 +269,9 @@ textarea {
     resize: none;
 }
 
-#bottomL{
-    width:100%;
-    height:100%;
+#blur {
+    width: 100%;
+    height: 100%;
     background-color: white;
     position: fixed;
     top: 0;
